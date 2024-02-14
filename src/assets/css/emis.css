@@ -1,0 +1,145 @@
+@media (min-width: 768px) {
+    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
+      margin-left: 0px;
+    }
+  }
+
+  .progress, .progress-bar{
+    border-radius: 5px;
+  }
+
+  .progress-bar.light-blue{
+    background-color: #007bff91 ;
+  }
+
+  .font-weight-light {
+    font-weight: 300 !important;
+  }
+
+  .card-title{
+    font-size: .9rem;
+  }
+
+
+  .table td, .table th {
+    padding: .50rem;
+    vertical-align: top;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .partner-logo{
+    padding: 15px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  .partner-logo .logo{
+   height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 15px;
+  }
+  .partner-logo .logo img{
+    height: 50px;
+
+  }
+
+  .partner-logo .logo::after{
+    content: "";
+    width: 100%;
+  }
+
+  .section-title {
+    margin-top:50px;
+    text-align: center;
+
+  }
+  .section-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #37517e;
+  }
+
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #47b2e4;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  .progress-bar.primary, .badge.badge-primary  {
+    background-color: #4093ac;
+    font-weight: bold;
+    color:#FFF;
+  }
+
+  .progress-bar.warning , .badge.badge-warning {
+    background-color: #ffa703;
+    font-weight: bold;
+    color:#FFF;
+  }
+
+  .progress-bar.success, .badge.badge-success {
+    background-color: #57d105;
+    font-weight: bold;
+    color:#FFF;
+  }
+
+  .progress-bar.info, .badge.badge-info {
+    background-color: #01a2ff;
+    font-weight: bold;
+    color:#FFF;
+  }
+ .info-panel-group{
+     padding-right: 7.5px;
+     padding-left: 7.5px;
+     background: #FFF;
+     width: 100%;
+     margin-left: 7.5px;
+     margin-right: 7.5px;
+     border-radius:5px;
+     border: solid 1px #DDD;
+ }
+
+.info-panel{
+    padding: 10px;
+}
+ .info-panel-icon{
+     display: inline-block;
+ }
+
+ .info-panel-text{
+     display: inline-block;
+ }
+
+ .partner-logo{
+     display: flex;
+     justify-content: space-evenly;
+ }
+
+ .horizontal-panel{
+     padding: 0;
+     margin: 0;
+     list-style: none;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .horizontal-panel div{
+     color: black;
+
+     text-align: center;
+ }
