@@ -3,11 +3,11 @@
   "version": "2.0.1",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
+    "axios": "^1.6.7",
     "bootstrap": "4.6.0",
     "chartist": "^0.11.4",
-    "gulp": "4.0.2",
+    "gulp": "^3.9.1",
     "gulp-append-prepend": "1.0.9",
-    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-bootstrap": "2.4.0",
     "react-chartist": "0.14.4",
@@ -16,7 +16,7 @@
     "react-notification-alert": "0.0.13",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^3.0.1",
     "reactstrap": "8.8.1",
     "sass": "1.53.0",
     "vite": "^5.0.12"
@@ -26,8 +26,8 @@
     "typescript": "4.7.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
@@ -35,16 +35,12 @@
     "minify:scss": "sass src/assets/scss/light-bootstrap-dashboard-pro-react.scss src/assets/css/light-bootstrap-dashboard-pro-react.min.css --style compressed",
     "build:scss": "npm run compile:scss && npm run minify:scss"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0"
   }
 }

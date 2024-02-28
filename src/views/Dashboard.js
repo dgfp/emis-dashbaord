@@ -1,7 +1,7 @@
 import React from "react";
-import ChartistGraph from "react-chartist";
+//import ChartistGraph from "react-chartist";
 // react-bootstrap components
-import {Badge,Button,Card,Navbar,Nav,Table,Container,Row,Col,Form,OverlayTrigger,Tooltip,} from "react-bootstrap";
+import {Container,Row} from "react-bootstrap";
 import ReactLeafletMap from "components/LeafletMap/ReactLeafletMap";
 
 function Dashboard() {
@@ -32,6 +32,7 @@ function Dashboard() {
                   <img src={require("assets/img/bd_map.png")} style={{ width: "100%" }} />
                 */}
                   <ReactLeafletMap style={{ flex: 1, width: '100%' }}/>
+                  
               </div>
               {/* /.card-body*/}
             </div>
