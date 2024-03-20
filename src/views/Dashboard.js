@@ -1,10 +1,62 @@
-import React from "react";
+import React, {useState} from "react";
 //import ChartistGraph from "react-chartist";
 // react-bootstrap components
 import {Container,Row} from "react-bootstrap";
 import ReactLeafletMap from "components/LeafletMap/ReactLeafletMap";
 
-function Dashboard() {
+const Dashboard = () => {
+//function Dashboard() {
+  const [serviceData, setServiceData] = useState([]);
+
+  const serviceDataBlankArray = [{
+    anc_1: 0,
+    anc_2: 0,
+    anc_3: 0,
+    anc_4: 0,
+    estimated_elco: "0",
+    estimated_household: "0",
+    estimated_population: "0",
+    estimated_pregnant_mother: "0",
+    fwaunits: 0,
+    infant_death: 0,
+    institutional_delivery_c_section: 0,
+    institutional_delivery_normal: 0,
+    institutional_delivery_total: 0,
+    live_birth: 0,
+    maternal_death: 0,
+    neonatal_death: 0,
+    non_institutional_delivery_non_trained_person: 0,
+    non_institutional_delivery_trained_person: 0,
+    other_death: 0,
+    percentage_of_registered_elco: "0.00",
+    percentage_of_registered_household: "0.00",
+    percentage_of_registered_population: "0.00",
+    percentage_of_registered_pregnant_mother: "0.67",
+    pnc_1: 0,
+    pnc_2: 0,
+    pnc_3: 0,
+    pnc_4: 0,
+    registered_elco: "0",
+    registered_household: "0",
+    registered_population: "0",
+    registered_pregnant_mother: "0",
+    still_birth: 0,
+    total_condom_acceptors: 0,
+    total_death: 0,
+    total_implant_acceptors: 0,
+    total_injectable_acceptors: 0,
+    total_iud_acceptors: 0,
+    total_oral_pill_acceptors: 0,
+    under_5_child_death: 0,
+    unions: 0
+  }];
+  
+  if(serviceData.length > 0 ){
+    var finalServiceData = serviceData;
+  }else{
+    var finalServiceData = serviceDataBlankArray;
+  }
+  //console.log("mn",serviceData);
   return (
     <>
       <Container fluid>
@@ -31,7 +83,7 @@ function Dashboard() {
                 
                   <img src={require("assets/img/bd_map.png")} style={{ width: "100%" }} />
                 */}
-                  <ReactLeafletMap style={{ flex: 1, width: '100%' }}/>
+                  <ReactLeafletMap style={{ flex: 1, width: '100%' }} setServiceData={setServiceData}/>
                   
               </div>
               {/* /.card-body*/}
@@ -64,7 +116,8 @@ function Dashboard() {
           </section>
           {/* left col */}
           {/* right col */}
-          <section className="col-lg-8 connectedSortable">
+          { finalServiceData.map( (sdata,index) => ( // iterate service data
+          <section className="col-lg-8 connectedSortable" key={index}>
             {/* Small boxes (Stat box) */}
             <div className="row">
               <div className="col-lg-3 col-6">
@@ -84,20 +137,20 @@ function Dashboard() {
                         <tr>
                           <td>Estimated</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>123456789</strong>
+                            <strong id="HouseholdRegistrationEstimated">{sdata.estimated_household}</strong>
                           </td>
                         </tr>
                         <tr>
                           <td>Registered</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>123456</strong>
+                            <strong>{sdata.registered_household}</strong>
                           </td>
                         </tr>
                       </tbody>
                     </table>
                     <div style={{ textAlign: "right", fontWeight: "bold" }}>
                       <h3 className="font-weight-light badge badge-success badge-lg">
-                        79 %
+                      {sdata.percentage_of_registered_household} %
                       </h3>
                     </div>
                     <div className="progress-group">
@@ -132,20 +185,20 @@ function Dashboard() {
                         <tr>
                           <td>Estimated</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>85,518,980</strong>
+                            <strong>{sdata.estimated_population}</strong>
                           </td>
                         </tr>
                         <tr>
                           <td>Registered</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>123456</strong>
+                            <strong>{sdata.registered_population}</strong>
                           </td>
                         </tr>
                       </tbody>
                     </table>
                     <div style={{ textAlign: "right", fontWeight: "bold" }}>
                       <h3 className="font-weight-light badge badge-primary badge-lg">
-                        79 %
+                      {sdata.percentage_of_registered_population} %
                       </h3>
                     </div>
                     <div className="progress-group">
@@ -181,20 +234,20 @@ function Dashboard() {
                         <tr>
                           <td>Estimated</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>85,518,980</strong>
+                            <strong>{sdata.estimated_elco}</strong>
                           </td>
                         </tr>
                         <tr>
                           <td>Registered</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>123456</strong>
+                            <strong>{sdata.registered_elco}</strong>
                           </td>
                         </tr>
                       </tbody>
                     </table>
                     <div style={{ textAlign: "right", fontWeight: "bold" }}>
                       <h3 className="font-weight-light badge badge-warning badge-lg">
-                        79 %
+                      {sdata.percentage_of_registered_elco} %
                       </h3>
                     </div>
                     <div className="progress-group">
@@ -230,20 +283,20 @@ function Dashboard() {
                         <tr>
                           <td>Estimated</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>85,518,980</strong>
+                            <strong>{sdata.estimated_pregnant_mother}</strong>
                           </td>
                         </tr>
                         <tr>
                           <td>Registered</td>
                           <td style={{ textAlign: "right" }}>
-                            <strong>123456</strong>
+                            <strong>{sdata.registered_pregnant_mother}</strong>
                           </td>
                         </tr>
                       </tbody>
                     </table>
                     <div style={{ textAlign: "right", fontWeight: "bold" }}>
                       <h3 className="font-weight-light badge badge-info badge-lg">
-                        79 %
+                      {sdata.percentage_of_registered_pregnant_mother} %
                       </h3>
                     </div>
                     <div className="progress-group">
@@ -356,6 +409,7 @@ function Dashboard() {
             </div>
             {/* ./col */}
           </section>
+           )) }
         </Row>
       </Container>
     </>

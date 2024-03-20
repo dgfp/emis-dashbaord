@@ -50,7 +50,7 @@ class ReactLeafletMap extends Component {
           ]}
           >
              
-              <GeoJSON data={BangladeshMap.features} onEachFeature={this.onEachFeature}/>
+          <GeoJSON data={BangladeshMap.features} onEachFeature={this.onEachFeature}/>
           </MapContainer>
         );
     }
